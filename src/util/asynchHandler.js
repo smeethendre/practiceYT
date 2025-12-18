@@ -10,3 +10,6 @@ const asyncHandler = (fn) => async (req, res, next) => {
 };
 
 export default asyncHandler;
+
+
+//this wrapper function wrapps around the route functions such that you error are handled. 
