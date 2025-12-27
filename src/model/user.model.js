@@ -20,6 +20,10 @@ const userSchema = new Schema({
     required: true,
   },
 
+  fileName: {
+    type: String,
+  },
+
   watchHistory: [
     {
       type: Schema.Types.ObjectId,
