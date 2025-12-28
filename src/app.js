@@ -13,13 +13,14 @@ app.use(
   })
 );
 
-app.use(                   // data from the frontend is converted to json i.e understandable to backend
+app.use(
+  // data from the frontend is converted to json i.e understandable to backend
   express.json({
     limit: "16kb",
   })
 );
 
-app.use(express.urlencoded()); // when data is sent fron frontend using the url and not using json, 
+app.use(express.urlencoded()); // when data is sent fron frontend using the url and not using json,
 // backend doesn't understand it well so it converts into understandable format like json.
 
 app.use(express.static("public"));
@@ -30,4 +31,8 @@ app.get("/login", (req, res) => {
     .setHeader("Access-Control-Allow-Origin", "http://localhost:500");
 });
 
+//
+import { router } from "./route/user.route.js";
+
+app.use('/api/v1/users', router )
 export { app };

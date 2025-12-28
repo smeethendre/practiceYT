@@ -1,12 +1,12 @@
-import asyncHandler from "../util/asyncHandler";
-import ApiError from "../util/apiError";
-import User from "../model/user.model";
+import asyncHandler from "../util/asyncHandler.js";
+import {ApiError} from "../util/apiError.js";
+import {User} from "../model/user.model.js";
 
 const registerUser = asyncHandler(async (req, res) => {
   const { userName, password } = req.body;
 
   if (!userName || !password) {
-    throw new ApiError(400, "Enter username and password");
+    throw ApiError(400, "Enter username and password");
   }
 
   const newUser = await User.create({
@@ -23,3 +23,5 @@ const registerUser = asyncHandler(async (req, res) => {
     },
   });
 });
+
+export { registerUser };
