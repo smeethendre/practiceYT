@@ -24,8 +24,6 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 });
 
-export { registerUser };
-
 const loginUser = asyncHandler(async (req, res) => {
   const { password, email, userName } = req.body;
 
@@ -70,4 +68,4 @@ const loginUser = asyncHandler(async (req, res) => {
   });
 });
 
-export { loginUser };
+export { registerUser, loginUser };
